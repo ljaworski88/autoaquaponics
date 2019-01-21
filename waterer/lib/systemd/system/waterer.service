@@ -1,0 +1,15 @@
+[Unit]
+Description=Aquarium Auto Top Off
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 topoff.py
+WorkingDirectory=/home/lukas/homeauto/
+Restart=always
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=topoff
+User=lukas
+
+[Install]
+WantedBy=multi-user.target
